@@ -1,0 +1,154 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+
+            <div class="header">
+
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> Home> Store> Item Consumption </label>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Consumption Type</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let Consumption of Consumption">
+                    {{ Consumption }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Requistion</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Requistion of Requistion">
+                    {{ Requistion }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Consumption No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+
+    </div>
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Issue To</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let Issue of Issue">
+                    {{ Issue }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Godown From</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Godown of Godown">
+                    {{ Godown }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Ref Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+
+
+    </div>
+
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Item Name</td>
+                <td>Properties</td>
+                <td>Quantity</td>
+                <td>SKU</td>
+                <td>Requistion No</td>
+                <td>Remark</td>
+
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Properties}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.SKU}}</td>
+                <td>{{item.RequistionNo}}</td>
+                <td>{{item.Remark}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter">Approved By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+</div>

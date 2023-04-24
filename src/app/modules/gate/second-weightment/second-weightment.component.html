@@ -1,0 +1,211 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="header">
+            <mat-icon style="margin: 5px;" (click)="onAdd()">add</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+            <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn" style="width: 100%;"> Home> Gate Management> Second Weighment </label>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Date</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+        <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control"
+        bsDatepicker [bsValue]="todate" />
+
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Time</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="time" />
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Gross Wt.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+        </div>
+
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>DocGrossWt.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+       
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Tare Wt.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+
+        </div>     
+
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>DocTareWt.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Net Wt.</label>
+        </div>
+        <div class="col-lg-2 ">
+            <input type="text" />
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>DocNetWt.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Gate No.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Purpose</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>VehicleNo.</label>
+        </div>
+        <div class="col-lg-2 ">
+            <input type="text" />
+        </div>
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>WeighmentNo.</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <select>
+                <option *ngFor="let Weighment of Weighment">
+                    {{ Weighment }}
+                </option>
+            </select>
+        </div> 
+       
+
+    </div>
+
+    <div class="row">
+        
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>PartyName</label>
+        </div>
+       <div class="col-lg-2 col-md-2 col-sm-2 ">
+            <input type="text" />
+        </div>      
+   
+       <div class="col-lg-1 col-md-2 col-sm-2 ">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5">
+            <input type="text" />
+        </div>
+       
+    </div>
+
+
+    <div class="row" style="margin-top: 20px;">
+        <label class="_btn">Vehicle Snapshot</label>
+        <div class="col-lg-2 firstImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>        
+        </div>
+        <div class="col-lg-2 secondImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>        
+        </div>
+        <div class="col-lg-2 thirdImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>        
+        </div>
+        <div class="col-lg-2 fourthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>        
+        </div>
+        <div class="col-lg-2 fourthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>        
+        </div>
+        
+       <div class="col-lg-2 col-md-2 col-sm-2 "></div>
+    
+    </div>
+    
+
+    <div style="text-align:center">
+        <div>
+            <webcam [height]="195" [width]="195" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+                (initError)="handleInitError($event)"></webcam>
+            <br />
+            <button class="_btn" (click)="triggerSnapshot();">Take A Snapshot</button>
+            <button class="_btn" (click)="toggleWebcam();">Toggle Webcam</button>            
+            <button class="_btn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next
+                Webcam</button>
+            <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label
+                for="cameraSwitchCheckbox">Allow Camera Switch</label>
+            <br />
+            </div>
+            <div hidden="true">
+            DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+            <button (click)="showNextWebcam(deviceId);">Activate</button>
+        </div>
+    </div>
+
+
+    
+
+    <h4 *ngIf="errors.length > 0">Messages:</h4>
+    <ul *ngFor="let error of errors">
+        <li>{{error | json}}</li>
+    </ul>
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>       
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>    
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+</div>
+

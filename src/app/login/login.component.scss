@@ -1,0 +1,80 @@
+.container {
+    border: 1px solid;
+    width: 100%;
+    background-color: lightgrey;
+    margin-top: 100px;
+
+}
+
+.login-div {
+    border: 1px solid;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+}
+
+.btn {
+    width: 100%;
+    float: center;
+    border: 1px solid #04888d;
+    border-radius: 12px 12px;
+    font-size: 15px;
+    color: azure;
+    background-color: #04888d;
+    text-decoration: solid;
+
+}
+
+// .split {
+//     height: 100%;
+//     width: 50%;
+//     position: fixed;
+//     z-index: 1;
+//     top: 0;
+//     overflow-x: hidden;
+//     padding-top: 20px;
+//   }
+
+//   .left {
+//     left: 0;
+
+//     background-color: #111;
+//   }
+
+//   .right {
+//     right: 0;
+
+//     background-color: red;
+//   }
+
+//   .centered {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     text-align: center;
+//   }
+
+
+
+
+.login-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.login,
+side-img {
+    padding: 20px 20px 20px 20px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-left: 150px;
+    margin-top: 20px;
+}

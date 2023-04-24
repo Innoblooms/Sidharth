@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-8 side-img">
+      <img style=" height: 300px;" src="../../assets/image/ibis.png" />
+
+    </div>
+
+    <div class="col-lg-4  login">
+      <div class="login-div">
+        <img class="img-fluid" style="width: 50px;" src="../../assets/image/man.png" alt="" />
+
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <input type="text" placeholder="Username" formControlName="username" matInput required />
+            <mat-error *ngIf="loginForm.get('username')">please enter username</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <input type="Password" matInput placeholder="Password" formControlName="pass">
+            <mat-error *ngIf="loginForm.get('password')">please enter password</mat-error>
+          </mat-form-field>
+
+          <button class="btn"  > LOGIN</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

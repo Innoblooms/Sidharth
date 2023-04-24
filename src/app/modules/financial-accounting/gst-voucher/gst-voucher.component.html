@@ -1,0 +1,215 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onAdd()">add</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">fast_rewind</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="Search()">search</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn"> Home > financial Accounting > Gst Voucher </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <label>VoucherType</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Voucher of Voucher">
+                    {{ Voucher }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <label> Voucher Date</label>
+        </div>
+        <div class="col-lg-2"> <input type="date" />
+        </div>
+        <div class="col-lg-1">
+            <label>VoucherNo.</label>
+        </div>
+        <div class="col-lg-2"> <input type="text" />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Party</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Party of Party">
+                    {{ Party }}
+                </option>
+            </select>
+        </div>
+
+
+        <div class="col-lg-2">
+            <label>Place of Supply</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let PartySupply of PartySupply">
+                    {{ PartySupply }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>RCM</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let RCM of RCM">
+                    {{ RCM }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Agst.Invoice</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Agst of Agst">
+                    {{ Agst }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <label>Reason</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Reason of Reason">
+                    {{ Reason }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>GST Type</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let GST of GST">
+                    {{ GST }}
+                </option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label> GSTRounding</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Rounding of Rounding">
+                    {{ Rounding }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-2">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Ref Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="date" />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" />
+        </div>
+    </div>
+
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>A/c Code</td>
+                <td>A/c Name</td>
+                <td>Narration</td>
+                <td>Amount</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.AcCode}}</td>
+                <td>{{item.AcName}}</td>
+                <td>{{item.Narration}}</td>
+                <td>{{item.Amount}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="container-class">
+        <table class="table">
+
+            <tr>
+                <td>HSN Name</td>
+                <td>HSN/SAC</td>
+                <td>Taxable Amt.</td>
+                <td>SGST/UGST</td>
+                <td>CGST%</td>
+                <td>CGST</td>
+                <td>IGST%</td>
+                <td>IGST</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.HSNName}}</td>
+                <td>{{item.HSNSAC}}</td>
+                <td>{{item.TaxableAmt}}</td>
+                <td>{{item.SGSTUGST}}</td>
+                <td>{{item.CGST}}</td>
+                <td>{{item.CGST}}</td>
+                <td>{{item.IGST}}</td>
+                <td>{{item.IGST}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row " style="margin-top: 3px;">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Prepared By </label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Modified By</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Approved By </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

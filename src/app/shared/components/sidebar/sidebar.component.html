@@ -1,0 +1,267 @@
+<mat-nav-list>
+
+    <!-- <div class="profile-card">
+        <div class="header">
+            <h2>Admin</h2>
+            
+        </div>
+        <img src="/assets/images/ibis.png" alt="Innoblooms">
+    </div> -->
+
+    <!-- <mat-divider></mat-divider> -->
+
+    <button mat-menu-item  >        
+        <h2 matSubheader><b>MENU</b></h2>        
+    </button>
+    
+    <button  mat-menu-item   routerLinkActive="list-item-active" routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <b>Home</b>
+    </button>
+
+    <button mat-menu-item    [matMenuTriggerFor]="GATE" routerLinkActive="list-item-active" routerLink="/gate">
+        <mat-icon>label_important</mat-icon>
+       <b> Gate Management</b>
+    </button>
+    <button mat-menu-item  [matMenuTriggerFor]="PURCHASES" routerLinkActive="list-item-active" routerLink="/purchases">
+        <mat-icon>payment</mat-icon>
+        <b>Purchase</b>
+    </button>
+    <button mat-menu-item  [matMenuTriggerFor]="SALES" routerLinkActive="list-item-active" routerLink="/sales">
+        <mat-icon>opacity</mat-icon>
+      <b>Sales</b>  
+    </button>
+    <button mat-menu-item  [matMenuTriggerFor]="FINANCIALACCOUNTING" routerLinkActive="list-item-active" routerLink="/financialaccounting">
+        <mat-icon>account_balance</mat-icon>
+       <b>Financial Accounting</b> 
+    </button>
+    <button mat-menu-item  [matMenuTriggerFor]="STORE" routerLinkActive="list-item-active" routerLink="/store">
+        <mat-icon>store</mat-icon>
+       <b> Store & Inventory</b>
+    </button>
+
+    <mat-menu #GATE="matMenu"  xPosition="before">
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gate/gateentry">
+            <mat-icon>label_important</mat-icon>
+           <b>Gate Entry</b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gate/first">
+            <mat-icon>label_important</mat-icon>
+        <b>First Weightment</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gate/second">
+            <mat-icon>label_important</mat-icon>
+          <b>Second Weightment</b>  
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gate/unloading">
+            <mat-icon>label_important</mat-icon>
+           <b>Unloading Entry</b>
+        </button> 
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gate/visitorpass">
+            <mat-icon>label_important</mat-icon>
+           <b>Vistor Gate Pass</b> 
+        </button>        
+    </mat-menu>
+
+    <mat-menu #PURCHASES="matMenu" xPosition="before">
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/purchases/indent">
+            <mat-icon>label_important</mat-icon>
+           <b>Indent Entry</b> 
+        </button>
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/purchases/grn">
+            <mat-icon>label_important</mat-icon>
+           <b>Grn Entry</b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/purchases/purchaseorder">
+            <mat-icon>label_important</mat-icon>
+           <b>Purchase Order </b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/purchases/purcasebill">
+            <mat-icon>label_important</mat-icon>
+           <b>Purchase Bill </b>
+        </button> 
+         
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/purchases/purchasereturn">
+            <mat-icon>label_important</mat-icon>
+            <b>Purchase Return</b>
+        </button>
+    </mat-menu>
+
+    <mat-menu #SALES="matMenu" xPosition="before">
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/salesorder">
+            <mat-icon>label_important</mat-icon>
+          <b>Sales Order</b>
+        </button>
+
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/workorder">
+            <mat-icon>label_important</mat-icon>
+          <b> Work Order</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/dailyproduction">
+            <mat-icon>label_important</mat-icon>
+        <b>Daily Producation</b>
+        </button>
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/salesreturn">
+            <mat-icon>label_important</mat-icon>
+        <b>Sales Return</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/loading">
+            <mat-icon>label_important</mat-icon>
+         <b>Loading</b>
+        </button>        
+    
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/sales/salesinvoice">
+            <mat-icon>label_important</mat-icon>
+          <b>Sales Invoice</b>
+        </button>        
+    </mat-menu>
+
+    <mat-menu #FINANCIALACCOUNTING="matMenu"  yPosition="above" xPosition="before" >
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/accountopening" >
+            <mat-icon>label_important</mat-icon>
+           <b > Account Opening</b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/paymentvoucher">
+            <mat-icon>label_important</mat-icon>
+         <b >Payment Voucher</b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/receiptvoucher">
+            <mat-icon>label_important</mat-icon>
+          <b >Receipt Voucher</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/journalvoucher">
+            <mat-icon>label_important</mat-icon>
+          <b > Journal Voucher</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/contravoucher">
+            <mat-icon>label_important</mat-icon>
+         <b > Contra Voucher</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/gstvoucher">
+            <mat-icon>label_important</mat-icon>
+          <b >GST Voucher</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/bankreconciliation">
+            <mat-icon>label_important</mat-icon>
+          <b >Bank Reconciliation </b>
+          
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/voucheradjustmententry">
+            <mat-icon>label_important</mat-icon>
+         <b >Voucher Adjustment </b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/labtestentry">
+            <mat-icon>label_important</mat-icon>
+        <b >Lab Test  Entry</b> 
+        </button>
+      
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/quality">
+            <mat-icon>label_important</mat-icon>
+         <b > Quality & Lab Test  <br>Sample Entry</b>
+        </button>
+        
+
+    </mat-menu>
+
+    <mat-menu #STORE="matMenu"  yPosition="above" xPosition="before">
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/store/requisition">
+            <mat-icon>label_important</mat-icon>
+          <b>Requition</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/store/itemopening">
+            <mat-icon>label_important</mat-icon>
+          <b>Item Opening</b>
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/store/issueandreceive">
+            <mat-icon>label_important</mat-icon>
+           <b>Item Issue/Receive</b> 
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/store/itemconsumption">
+            <mat-icon>label_important</mat-icon>
+            <b>  Item Consumption</b>
+        
+        </button>
+
+        <button mat-menu-item routerLinkActive="list-item-active" routerLink="/store/itemtransfer">
+            <mat-icon>label_important</mat-icon>
+         <b>Item Transfer</b> 
+        </button>
+
+               
+    </mat-menu>
+
+
+
+
+
+
+
+    <!-- <h2 matSubheader>Pages</h2>     
+
+      <mat-expansion-panel (opened)="onPanelOpened()" (closed)="onPanelClosed()" #panel>
+        <mat-expansion-panel-header>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/">DASHBOARD</a>
+        </mat-expansion-panel-header>
+        <mat-list>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/purchases">GATE MANAGEMENT </a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/purchases">PURCHASES </a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/sales">SALES </a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/finance">FINANCE </a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/store">STORES </a>
+        </mat-list>
+      </mat-expansion-panel>    -->
+
+
+      
+      <a mat-list-item routerLinkActive="list-item-active" routerLink="/master">
+        <mat-icon>gamepad</mat-icon>
+        <b>Master</b> 
+    </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/utility">
+        <mat-icon>shuffle</mat-icon>
+        <b>Utility</b> 
+    </a>
+
+
+
+
+
+ <!-- <mat-divider></mat-divider> -->
+
+    <!-- <h2 matSubheader>Tools</h2> -->
+
+   <a mat-list-item routerLinkActive="list-item-active" routerLink="">
+        <mat-icon>settings</mat-icon>
+        <b>Settings</b> 
+    </a>
+
+  
+
+</mat-nav-list>

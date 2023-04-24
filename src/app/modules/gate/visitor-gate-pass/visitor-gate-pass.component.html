@@ -1,0 +1,209 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn" style="width: 100%;"> Home> Gate Management> Visitor Gate Pass </label>
+
+        </div>
+    </div>
+    <table>
+        <tr>
+
+            <td>
+                <label> Gate No. </label>
+                <span>
+                    <select>
+                        <option *ngFor="let gate of gate ">
+                            {{gate}}
+                        </option>
+                    </select>
+                </span>
+            </td>
+            <td>
+                <label> Gate Pass Type </label>
+                <span>
+                    <select>
+                        <option *ngFor="let pass of pass ">
+                            {{pass}}
+                        </option>
+                    </select>
+                </span>
+            </td>
+            <td rowspan="2">
+
+                <div class="snapshot" *ngIf="webcamImage">
+                    <img [src]="webcamImage.imageAsDataUrl" />
+                </div>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label> Purpose </label>
+                <span>
+                    <input type="text">
+                </span>
+            </td>
+            <td>
+                <label>Person To Meet </label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+
+
+
+        </tr>
+        <tr>
+            <td>
+                <label> Gate In Date/Time </label>
+                <span>
+                    <input type="datetime-local" [value]="today" />
+                </span>
+            </td>
+            <td>
+                <label> Gate Pass No. </label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+            <td>
+                <label>Slip No.</label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label> Visitor Name </label>
+                <span>
+                    <input type="text">
+                </span>
+            </td>
+            <td>
+                <label> Mobile No. </label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+            <td>
+                <label> Organization Name </label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label>Address</label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+            <td>
+                <label>City</label>
+                <span>
+                    <select>
+                        <option *ngFor="let city of city ">
+                            {{city}}
+                        </option>
+                    </select>
+                </span>
+            </td>
+            <td>
+                <label> Vehicale Type </label>
+                <span>
+                    <select>
+                        <option *ngFor="let Vehicale of Vehicale ">
+                            {{Vehicale}}
+                        </option>
+                    </select>
+                </span>
+            </td>
+        </tr>
+        <tr>
+
+            <td>
+                <label> Vehicale No.</label>
+                <span>
+                    <input type="text" />
+                </span>
+            </td>
+            <td>
+                <label>Gate Out Date/Time</label>
+                <span>
+                    <input type="datetime-local" [value]="today" />
+                </span>
+            </td>
+
+
+        </tr>
+        <tr>
+
+
+
+        </tr>
+    </table>
+
+    <div style="text-align:center">
+
+        <div>
+            <webcam [height]="120" [width]="200" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+                (initError)="handleInitError($event)">
+            </webcam>
+            <br />
+            <button class="_btn" (click)="triggerSnapshot();">Take A Snapshot</button>
+            <button class="_btn" (click)="toggleWebcam();">Toggle Webcam</button>
+            <button class="_btn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next
+                Webcam</button>
+            <div hidden="true">
+                <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label
+                    for="cameraSwitchCheckbox">Allow Camera Switch</label>
+                <br />
+                DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 150px">
+                <button (click)="showNextWebcam(deviceId);">Activate</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h4 *ngIf="errors.length > 0">Messages:</h4>
+    <ul *ngFor="let error of errors">
+        <li>{{error | json}}</li>
+    </ul>
+
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Gate Out By & Date/Time </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+
+</div>

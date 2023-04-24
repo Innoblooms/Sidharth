@@ -1,0 +1,187 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="header">
+
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> Home> Sales> Loading </label>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>LoadingType</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Loading of Loading">
+                    {{ Loading }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>LoadingNo.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let LoadingtNo of LoadingtNo">
+                    {{ LoadingtNo }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Consignee</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <select>
+                <option *ngFor="let Consignee of Consignee">
+                    {{ Consignee }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>ItemNature</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Delivery To</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <select>
+                <option *ngFor="let Delivery of Delivery">
+                    {{ Delivery }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Party</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>To Place</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let ToPlace of ToPlace">
+                    {{ ToPlace }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>1st Weightment No.</label>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <select>
+                <option *ngFor="let Weightment of Weightment">
+                    {{ Weightment }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Distributor</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+    </div>
+
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Reel/BundleNo</td>
+                <td>Barcode</td>
+                <td>Department</td>
+                <td>SO.No.</td>
+                <td>Item Name</td>
+                <td>BF</td>
+                <td>GSM</td>
+                <td>Size Unit</td>
+                <td>WO.No.</td>
+                <td>Width</td>
+                <td>Length</td>
+                <td>Grain</td>
+                <td>SPR</td>
+                <td>RPB</td>
+                <td>Ream/Wt.</td>
+                <td>Weight</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.ReelBundleNo}}</td>
+                <td>{{item.Barcode}}</td>
+                <td>{{item.Department}}</td>
+                <td>{{item.SONo}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Bf}}</td>
+                <td>{{item.GSM}}</td>
+                <td>{{item.SizeUnit}}</td>
+                <td>{{item.WONo}}</td>
+                <td>{{item.Width}}</td>
+                <td>{{item.Length}}</td>
+                <td>{{item.Grain}}</td>
+                <td>{{item.SPR}}</td>
+                <td>{{item.RPB}}</td>
+                <td>{{item.ReamWt}}</td>
+                <td>{{item.Weight}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+</div>

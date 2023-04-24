@@ -1,0 +1,203 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="header">
+
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;">Home> Purchase> Purchase Order</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <button class="_btn" type="button" value="General">General</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <button class="_btn" type="button" value="T&C"  routerLink="/termandcondition">Terms & Conditions</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>PO Type</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let POType of POType">
+                    {{ POType }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>PO Name</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Date</label>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Supplier</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let Supplier of Supplier">
+                    {{ Supplier }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>QuotationNo.</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let QuotationNo of QuotationNo">
+                    {{ QuotationNo }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Eng.No.</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Ref. No.</label>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>AmendentOr.</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <select>
+                <option *ngFor="let AmendentOr of AmendentOr">
+                    {{ AmendentOr }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+    </div>
+
+  
+    <div class="container-table">
+        <table class="table">
+    
+            <tr>
+                <td> #</td>
+                <td>Item Name</td>
+                <td>Properties</td>
+                <td>Order Qty</td>
+                <td>Unit</td>
+                <td>Rate</td>
+                <td>Amount</td>
+                <td>Required Date</td>
+                <td>Remark</td>
+             
+            </tr>
+    
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Properties}}</td>
+                <td>{{item.OrderQty}}</td>
+                <td>{{item.Unit}}</td>
+                <td>{{item.Rate}}</td>
+                <td>{{item.Amount}}</td>
+                <td>{{item.RequiredDate}}</td>
+                <td>{{item.Remark}}</td>
+                
+    
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <button class="_btn" type="button" value="Tax Summary">Tax Summary</button>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9"></div>
+
+    </div>
+
+    <div class="container-class">
+        <table class="table">
+    
+            <tr>
+                <td> #</td>
+                <td>Service</td>
+                <td>Amount</td>
+                <td>AI Rate</td>
+                <td>SGST</td>
+                <td>CGST</td>
+                <td>IGST</td>
+            </tr>
+    
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.Service}}</td>
+                <td>{{item.Amount}}</td>
+                <td>{{item.AIRate}}</td>
+                <td>{{item.SGST}}</td>
+                <td>{{item.CGST}}</td>
+                <td>{{item.IGST}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row " style="margin-top: 2px;">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Gate Out By & Date/Time </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

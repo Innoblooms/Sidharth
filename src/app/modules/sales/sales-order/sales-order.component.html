@@ -1,0 +1,244 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> Home> Sales> Sales Order </label>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="General">General</button>
+        </div>
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="T&C">Terms & Conditions</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Sale Order Type</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Sale of Sale">
+                    {{ Sale }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>Order No.</label>
+        </div>
+        <div class="col-lg-2"> <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Consignee</label>
+
+        </div>
+        <div class="col-lg-4">
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-2">
+            <label>Item Nature</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Item of Item">
+                    {{ Item }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+
+        <div class="col-lg-1">
+            <label>DeliveryTo</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Delivery of Delivery">
+                    {{ Delivery }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Party</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Party of Party">
+                    {{ Party }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <label>To Place</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let ToPlace of ToPlace">
+                    {{ ToPlace }}
+                </option>
+            </select>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Distributor</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Distributor of Distributor">
+                    {{ Distributor }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <label>Amendment Order</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Amendment of Amendment">
+                    {{ Amendment }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Party Order No.</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+        <div class="col-lg-1">
+            <label>Price List</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>PI No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>PI Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+    </div>
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Item Name</td>
+                <td>Description</td>
+                <td>BF</td>
+                <td>G...</td>
+                <td>S.Unit</td>
+                <td>Width</td>
+                <td>Length</td>
+                <td>Gram</td>
+                <td>Wight</td>
+                <td>Reel</td>
+                <td>Unit</td>
+                <td>Tolarence</td>
+                <td>Rate</td>
+                <td>Amount</td>
+                <td>Delivery Date</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.BF}}</td>
+                <td>{{item.G}}</td>
+                <td>{{item.SUnit}}</td>
+                <td>{{item.Width}}</td>
+                <td>{{item.Length}}</td>
+                <td>{{item.Gram}}</td>
+                <td>{{item.Wight}}</td>
+                <td>{{item.Reel}}</td>
+                <td>{{item.Unit}}</td>
+                <td>{{item.Tolarence}}</td>
+                <td>{{item.Rate}}</td>
+                <td>{{item.Amount}}</td>
+                <td>{{item.DeliveryDate}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Approved By & Date </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

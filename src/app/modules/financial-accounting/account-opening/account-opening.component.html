@@ -1,0 +1,192 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn"> Home > financial Accounting > Account Opening </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Voucher Type</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Voucher of Voucher">
+                    {{ Voucher }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2"> <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Ref Date</label>
+        </div>
+        <div class="col-lg-2"> <input type="text" />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Vr No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Debit</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Credit</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Account Name</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Account of Account">
+                    {{ Account }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>ChequeNo.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+        <div class="col-lg-1">
+            <label>ChequeDate</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="Text" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Cost Center</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let CostCenter of CostCenter">
+                    {{ CostCenter }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>Favour of</label>
+        </div>
+        <div class="col-lg-5">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Narration</label>
+        </div>
+        <div class="col-lg-4">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label> ClearDate</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+    </div>
+
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>V Type</td>
+                <td>Vr No.</td>
+                <td>Vr Date</td>
+                <td>Ref. No.</td>
+                <td>Ref. Date</td>
+                <td>Chq.</td>
+                <td>Chq.Date</td>
+                <td>Narration</td>
+                <td>Debit</td>
+                <td>Credit</td>
+                <td>Cost Center</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.VType}}</td>
+                <td>{{item.VrNo}}</td>
+                <td>{{item.VrDate}}</td>
+                <td>{{item.RefNo}}</td>
+                <td>{{item.RefDate}}</td>
+                <td>{{item.Chq}}</td>
+                <td>{{item.ChqDate}}</td>
+                <td>{{item.Narration}}</td>
+                <td>{{item.Debit}}</td>
+                <td>{{item.Credit}}</td>
+                <td>{{item.CostCenter}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Prepared By </label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Modified By</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6"></div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label class="allfooter"> Approved By </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  //  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text],
+input[type=date],
+input[type=time],
+input[type=datetime-local],
+select,
+textarea {
+  width: 100%;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  padding: 2px 2px 0 0;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  border: 1px solid #04888d;
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mat-elevation-z8 {
+  background-color: #f2f2f2;
+  margin: 1px 1px 1px 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  border: 1px solid #04888d;
+  display: flex;
+  margin-top: 2px;
+
+}
+
+._btn {
+
+  background-color: #04888d;
+  // text-transform: uppercase;
+  color: white;
+  padding: 2px 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 3px 1px;
+  // cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.allfooter {
+  padding: 1px 1px 1px 1px;
+  width: 100%;
+  border: .5px solid #333;
+  text-align: center;
+  background-color: #04888d;
+  margin: 1px 1px 1px 1px;
+  color: white;
+  border: none;
+}
+
+#allfooter {
+  padding: 1px 1px 1px 1px;
+  width: 100%;
+  border: .5px solid #333;
+  text-align: center;
+  margin: 1px 1px 1px 1px;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+
+}
+
+section {
+  display: table;
+}
+
+
+
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 44px !important;
+
+
+}
+
+
+::ng-deep .mat-form-field {
+  line-height: 55px !important;
+}
+
+.button-row {
+  display: table-cell;
+
+}
+
+.button-row .mat-mdc-button-base {
+  margin: 1px 1px 1px 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 60px;
+}
+
+.firstImg, .secondImg, .thirdImg, .fourthImg, .fifthImg{
+  border: 1px solid #04888d;
+  margin: 12px 2px 12px 2px;
+  padding: 2px 2px 2px 2px;
+  height: 200px;
+  width: 200px;
+  }
+
+.container-table{
+    border: 1px solid #04888d;
+    background-color: #f2f2f2;
+    height: 240px;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 4px 4px 4px 0px;
+  }
+.container-class{
+        border: 1px solid #04888d;
+        background-color: #f2f2f2;
+        height: 150px;
+        width: 50%;
+        margin-top: 2px;
+      }

@@ -1,0 +1,46 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-5 side-img">
+            <img style="width: 500px; height: 300px;" src="../../assets/image/ibis.png" />
+
+        </div>
+        <div class="col-lg-7  login">
+
+            <div class="login-div">
+
+                <h4 class="header">Financial Year</h4>
+
+                <table class="table">
+
+                    <tr>
+                        <td>1</td>
+                        <td>Financial Year</td>
+                        <td>Start Date</td>
+                        <td>End Date</td>
+                        <td>Prefix</td>
+                    </tr>
+
+                    <tr *ngFor="let item o">
+                        <td>{{item.id}}</td>
+                        <td>{{item.FinancialYear}}</td>
+                        <td>{{item.StartDate}}</td>
+                        <td>{{item.EndDate}}</td>
+                        <td>{{item.Prefix}}</td>
+
+                    </tr>
+                </table>
+                <div class="footer">
+                    <div class="row">
+                        <div class=" col-lg-5 col-md-5 col-sm-5">
+                            <button class="btn" (click)="previous()">Previous</button>
+                        </div>
+                        <div class=" col-lg-2 col-md-2 col-sm-2"></div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                            <button class="btn" (click)="next()">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,131 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="header">
+
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;">Home>Purchase>Indent Entry </label>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Indent Type</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Indent of Indent">
+                    {{ Indent }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Indent No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Indentor</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>IndentDate</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Requisition</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Requisition of Requisition">
+                    {{ Requisition }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>DepartMent</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Indent of Indent">
+                    {{ Indent }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <input type="text" />
+        </div>
+    </div>
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Item Name</td>
+                <td>Properties</td>
+                <td>Quantity</td>
+                <td>SKU</td>
+                <td>Req Date</td>
+                <td>Remark</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Properties}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.SKU}}</td>
+                <td>{{item.ReqDate}}</td>
+                <td>{{item.Remark}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="row " style="margin-top: 7px;">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Approved By & Date </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

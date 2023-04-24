@@ -1,0 +1,67 @@
+<div class="container">
+<div class="row">
+    <div class="col-lg-8">
+    <div class="header">
+        
+        <mat-icon style="margin: 5px;" (click)="onsave()">delete</mat-icon>
+        <mat-icon style="margin: 5px;" (click)="onAdd()">edit</mat-icon>
+        <mat-icon style="margin: 5px;" (click)="autorenew()">visibility</mat-icon>
+        <mat-icon style="margin: 5px;" (click)="onPrint()">filter_list</mat-icon>
+        <mat-icon style="margin: 5px;" (click)="onCancle()">save</mat-icon>
+      
+    </div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <label class="_btn" > Home > financial Accounting > Bank Reconcillation </label>
+</div>
+</div>
+    <div class="row">
+        <div class="col-lg-3">
+            <input type="search"  placeholder="Voucher No." />
+        </div>
+
+        <div class="col-lg-5">
+
+        </div>
+        <div class="col-lg-2">
+            <label>Clear Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="date" />
+        </div>
+
+    </div>
+ 
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Voucher No.</td>
+                <td>Date</td>
+                <td>A/c Name</td>
+                <td>Favour Of</td>
+                <td>Chq No</td>
+                <td>Chq Date</td>
+                <td>Clear Date</td>
+                <td>Debit</td>
+                <td>Credit</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.VoucherNo}}</td>
+                <td>{{item.Date}}</td>
+                <td>{{item.AcName}}</td>
+                <td>{{item.FavourOf}}</td>
+                <td>{{item.ChqNo}}</td>
+                <td>{{item.ChqDate}}</td>
+                <td>{{item.ClearDate}}</td>
+                <td>{{item.Debit}}</td>
+                <td>{{item.Credit}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+</div>

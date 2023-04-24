@@ -1,0 +1,387 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="header">
+
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> Home> Sales> Sales Inovice </label>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="General">General</button>
+        </div>
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="T&C">Terms & Conditions</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label>InvoiceType</label>
+        </div>
+
+        <div class="col-lg-5">
+            <select>
+                <option *ngFor="let Return of Return">
+                    {{ Return }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Supplimentry</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Supplimentry of Supplimentry">
+                    {{ Supplimentry }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Ref.InoviceNo</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Ref of Ref">
+                    {{ Ref }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label>InvoiceNo.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Supplier of Supplier">
+                    {{ Supplier }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>Gate No.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Gate of Gate">
+                    {{ Gate }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>VehicaleNo.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1">
+            <label>Party</label>
+        </div>
+
+        <div class="col-lg-5">
+            <select>
+                <option *ngFor="let Party of Party">
+                    {{ Party }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Transport</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Transport of Transport">
+                    {{ Transport }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Mode</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Mode of Mode">
+                    {{ Mode }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1">
+            <label>Distributor</label>
+        </div>
+
+        <div class="col-lg-5">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>LR No.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1">
+            <label>Consignee</label>
+        </div>
+
+        <div class="col-lg-5">
+            <select>
+                <option *ngFor="let Consignee of Consignee">
+                    {{ Consignee }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>PolicyNo.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1">
+            <label>EwayBill(Y/N)</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let EwayBill of EwayBill">
+                    {{ EwayBill }}
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1">
+            <label>DeliveryTo</label>
+        </div>
+
+        <div class="col-lg-5">
+            <select>
+                <option *ngFor="let Delivery of Delivery">
+                    {{ Delivery }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>EwayBillNo.</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-1">
+            <label>To Place</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let ToPlace of ToPlace">
+                    {{ ToPlace }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>ItemNature</label>
+        </div>
+
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Item of Item">
+                    {{ Item }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1">
+            <label>Remark</label>
+        </div>
+
+        <div class="col-lg-5">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Godown</td>
+                <td>Sales Order No</td>
+                <td>Item Name</td>
+                <td>BF</td>
+                <td>G...</td>
+                <td>S.Unit</td>
+                <td>Width</td>
+                <td>Length</td>
+                <td>Grain</td>
+                <td>Weight</td>
+                <td>ReevBun</td>
+                <td>Rate</td>
+                <td>Amount</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.Godown}}</td>
+                <td>{{item.SalesOrderNo}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.BF}}</td>
+                <td>{{item.G}}</td>
+                <td>{{item.SUnit}}</td>
+                <td>{{item.Width}}</td>
+                <td>{{item.Length}}</td>
+                <td>{{item.Grain}}</td>
+                <td>{{item.Weight}}</td>
+                <td>{{item.ReevBun}}</td>
+                <td>{{item.Rate}}</td>
+                <td>{{item.Amount}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="General">Service</button>
+        </div>
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="T&C">Tax summary</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+
+
+    <div class="container-class">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Service</td>
+                <td>Amount</td>
+                <td>AI Rate</td>
+                <td>SGST</td>
+                <td>CGST</td>
+                <td>IGST</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.Service}}</td>
+                <td>{{item.Amount}}</td>
+                <td>{{item.AIRate}}</td>
+                <td>{{item.SGST}}</td>
+                <td>{{item.CGST}}</td>
+                <td>{{item.IGST}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <div class="row " style="margin-top: 3px;">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Approved By & Date </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,476 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="header">
+                <button style="border: none;" (click)="onAdd()"><mat-icon>create</mat-icon></button>
+                <button style="border: none;" (click)="onDelete()"><mat-icon>delete</mat-icon></button>
+                <button style="border: none;" (click)="onWatch()"><mat-icon>visibility</mat-icon></button>
+                <button style="border: none;" (click)="onForward()"><mat-icon>fast_rewind</mat-icon></button>
+                <button style="border: none;" (click)="onBackward()"><mat-icon>fast_forward</mat-icon></button>
+                <button style="border: none;" (click)="onPrint()"><mat-icon>print</mat-icon></button>
+                <button style="border: none;" (click)="onCancle()"><mat-icon>cancel</mat-icon></button>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn" style="width: 100%;"> Home> Gate Management> First Weighment </label>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-lg-2 ">
+            <label>Vehicle Type</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Vehicle of Vehicle">
+                    {{ Vehicle }}
+                </option>
+            </select>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+
+
+        </div>
+
+        <div class="col-lg-2 ">
+            <label>Time</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="time" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Weighment No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+
+        <div class="col-lg-2 ">
+            <label>Gross Weight</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Gate No.</label>
+        </div>
+        <div class="col-lg-2">
+            <select>
+                <option *ngFor="let Gate of Gate">
+                    {{ Gate }}
+                </option>
+            </select>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Purpose</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Party Name</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Tare Weight</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Vehicle No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Weight</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+        <div class="col-lg-2">
+            <label>Net Weight</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <label class="_btn">Vehicle Snapshot</label>
+        <div class="col-lg-2 firstImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 secondImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 thirdImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 fourthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 fifthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+
+    </div>
+
+    <div style="text-align:center">
+        <div>
+            <webcam [height]="195" [width]="195" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+                (initError)="handleInitError($event)"></webcam>
+            <br />
+            <button class="_btn" (click)="triggerSnapshot();">Take A Snapshot</button>
+            <button class="_btn" (click)="toggleWebcam();">Toggle Webcam</button>
+
+            <button class="_btn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next
+                Webcam</button>
+            <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label
+                for="cameraSwitchCheckbox">Allow Camera Switch</label>
+            <br />
+            <div hidden="true">
+                DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+                <button class="_btn" (click)="showNextWebcam(deviceId);">Activate</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h4 *ngIf="errors.length > 0">Messages:</h4>
+    <ul *ngFor="let error of errors">
+        <li>{{error | json}}</li>
+    </ul>
+
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Gate Out By & Date/Time </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+
+
+</div>
+
+ -->
+<div class="container">
+    <form class="gate-entry" [formGroup]="firstForm" (ngSubmit)="submit()">
+    <div class="row">
+        
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> First Weighment </label>
+
+        </div>
+
+    </div>
+
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-lg-2 ">
+            <label>Vehicle Type</label>
+        </div>
+        <div class="col-lg-2">
+            <select formControlName="Vehicle">
+                <option *ngFor="let Vehicle of Vehicle">
+                    {{ Vehicle }}
+                </option>
+            </select>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="date" formControlName="date" />
+        </div>
+
+        <div class="col-lg-2 ">
+            <label>Time</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="time"  formControlName="time" />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Weighment No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="Weighmentno" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="Refno"/>
+
+        </div>
+
+        <div class="col-lg-2 ">
+            <label>Gross Weight</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" formControlName="Grossweight"  />
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Gate No.</label>
+        </div>
+        <div class="col-lg-2">
+            <select formControlName="Gate">
+                <option *ngFor="let Gate of Gate">
+                    {{ Gate }}
+                </option>
+            </select>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Purpose</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="purpose"/>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Party Name</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="partyName"/>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 ">
+            <label>Tare Weight</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="tareweight"/>
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Vehicle No.</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" formControlName="vehicleNo" />
+
+        </div>
+        <div class="col-lg-2 ">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text"  formControlName="remark"/>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2">
+            <label>Weight</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text"  formControlName="weight"/>
+        </div>
+
+        <div class="col-lg-2">
+            <label>Net Weight</label>
+        </div>
+
+        <div class="col-lg-2">
+            <input type="text" formControlName="netweight" />
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px;">
+        <label class="_btn">Vehicle Snapshot</label>
+        <div class="col-lg-2 firstImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 secondImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 thirdImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 fourthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+        <div class="col-lg-2 fourthImg">
+            <div class="snapshot" *ngIf="webcamImage">
+                <img [src]="webcamImage.imageAsDataUrl" />
+            </div>
+        </div>
+
+        <div class="col-lg-2"></div>
+
+    </div>
+
+
+
+
+
+
+
+    <div style="text-align:center">
+        <div>
+            <webcam [height]="195" [width]="195" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+                [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+                (initError)="handleInitError($event)"></webcam>
+            <br />
+            <button class="_btn" (click)="triggerSnapshot();">Take A Snapshot</button>
+            <button class="_btn" (click)="toggleWebcam();">Toggle Webcam</button>
+
+            <button class="_btn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next
+                Webcam</button>
+            <input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label
+                for="cameraSwitchCheckbox">Allow Camera Switch</label>
+            <br />
+            <div hidden="true">
+                DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+                <button class="_btn" (click)="showNextWebcam(deviceId);">Activate</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h4 *ngIf="errors.length > 0">Messages:</h4>
+    <ul *ngFor="let error of errors">
+        <li>{{error | json}}</li>
+    </ul>
+
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter"  formControlName="Prepared"/>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter"  formControlName="Modified"/>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Gate Out By & Date/Time </label>
+            <input type="text" id="allfooter"  formControlName="gateout"/>
+        </div>
+
+    </div>
+
+</form>
+
+</div>

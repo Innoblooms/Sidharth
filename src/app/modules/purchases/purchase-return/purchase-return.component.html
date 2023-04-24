@@ -1,0 +1,281 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-9">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="_btn" style="width: 100%;"> Home> Purchase> Purchase Return</label>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <button class="_btn" type="button" value="General">General</button>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <button class="_btn" type="button" value="T&C" (click)="terms()">Terms & Conditions</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Return Type</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Return of Return">
+                    {{ Return }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Return No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+            <label>Reason</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Reason of Reason">
+                    {{ Reason }}
+                </option>
+            </select>
+        </div>
+
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>E-Way Bill Req.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let EWay of EWay">
+                    {{ EWay }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Gate No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Gate of Gate">
+                    {{ Gate }}
+                </option>
+            </select>
+        </div>
+
+        <div class="col-lg-1 col-md-2 col-sm-2">
+            <label>Bill No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>E-Way Bill NO.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+            <label>Bill Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Supplier</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Supplier of Supplier">
+                    {{ Supplier }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Vehicale No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+            <label>Ref No.</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" />
+        </div>
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Transporter</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Transporter of Transporter">
+                    {{ Transporter }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Transport Mode</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <select>
+                <option *ngFor="let Transport of Transport">
+                    {{ Transport }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1 col-md-2 col-sm-2">
+            <label>Ref Date</label>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <input type="text" placeholder="Datepicker" [bsConfig]="datepickerConfig" class="form-control" bsDatepicker
+                [bsValue]="todate" />
+        </div>
+
+
+
+    </div>
+    <div class="row">
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2">
+            <label>Remark</label>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Godown</td>
+                <td>Item Name</td>
+                <td>Properties</td>
+                <td>GRN No.</td>
+                <td>Order No.</td>
+                <td>Unit</td>
+                <td>Quantity</td>
+                <td>Rate</td>
+                <td>Amount</td>
+
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.Godown}}</td>
+                <td>{{item.ItemName}}</td>
+                <td>{{item.Properties}}</td>
+                <td>{{item.GRNNo}}</td>
+                <td>{{item.OrderNo}}</td>
+                <td>{{item.Unit}}</td>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.Rate}}</td>
+                <td>{{item.Amount}}</td>
+
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="General">Service</button>
+        </div>
+        <div class="col-lg-3">
+            <button class="_btn" type="button" value="T&C">Tax summary</button>
+        </div>
+        <div class="col-lg-6"></div>
+
+    </div>
+
+    <div class="container-class">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Service</td>
+                <td>Amount</td>
+                <td>AI Rate</td>
+                <td>SGST</td>
+                <td>CGST</td>
+                <td>IGST</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.id}}</td>
+                <td>{{item.Service}}</td>
+                <td>{{item.Amount}}</td>
+                <td>{{item.AIRate}}</td>
+                <td>{{item.SGST}}</td>
+                <td>{{item.CGST}}</td>
+                <td>{{item.IGST}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <div class="row " style="margin-top: 2px;">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By & Date</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> <label class="allfooter"> Approved By & Date </label> </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>

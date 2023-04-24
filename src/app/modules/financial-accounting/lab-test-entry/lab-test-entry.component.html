@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="header">
+                <mat-icon style="margin: 5px;" (click)="onDelete()">delete</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onedit()">edit</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onForward()">visibility</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onBackward()">filter_list</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onSave()">save</mat-icon>
+                <mat-icon style="margin: 5px;" (click)="onPrint()">print</mat-icon>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <label class="_btn"> Home > financial Accounting > Lab Test </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Lab Type</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Lab of Lab">
+                    {{ Lab }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>SampleNo.</label>
+        </div>
+        <div class="col-lg-2"> <select>
+                <option *ngFor="let Sample of Sample">
+                    {{ Sample }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <label>Sample Custom Qty.</label>
+        </div>
+        <div class="col-lg-2"> <input type="text" />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Lab No.</label>
+        </div>
+        <div class="col-lg-3">
+            <input type="Text" />
+        </div>
+        <div class="col-lg-1">
+
+        </div>
+
+        <div class="col-lg-1">
+            <label>Date</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="date" />
+        </div>
+
+
+
+        <div class="col-lg-2">
+            <label>Item Name</label>
+        </div>
+        <div class="col-lg-2">
+            <input type="text" />
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-1">
+            <label>Technician</label>
+        </div>
+        <div class="col-lg-4">
+            <select>
+                <option *ngFor="let Technician of Technician">
+                    {{ Technician }}
+                </option>
+            </select>
+        </div>
+        <div class="col-lg-1">
+            <label>TestTemplate</label>
+        </div>
+        <div class="col-lg-6">
+            <input type="text" />
+        </div>
+    </div>
+
+    <div class="container-table">
+        <table class="table">
+
+            <tr>
+                <td> #</td>
+                <td>Parameter</td>
+                <td>Unit</td>
+                <td>Value Type</td>
+                <td>Range1</td>
+                <td>Range2</td>
+                <td>Found Value</td>
+            </tr>
+
+            <tr *ngFor="let item of Data">
+                <td>{{item.Parameter}}</td>
+                <td>{{item.Unit}}</td>
+                <td>{{item.ValueType}}</td>
+                <td>{{item.Range1}}</td>
+                <td>{{item.Range2}}</td>
+                <td>{{item.FoundValue}}</td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Prepared By </label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Modified By</label>
+            <input type="text" id="allfooter" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3"></div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <label class="allfooter"> Approved By </label>
+            <input type="text" id="allfooter" />
+        </div>
+
+    </div>
+
+</div>
